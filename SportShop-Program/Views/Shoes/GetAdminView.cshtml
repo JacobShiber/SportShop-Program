@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "GetAdminView";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Shoes")'">Shoes - Admin View</h1>
+    <div id="mainButtons">
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shoes")'">Admin View</button> |
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button>
+    </div>
+</div>
+
+<hr id="headerLine" />
+
+<div id="tableContainer">
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <td class="tableCell">ID</td>
+                <td class="tableCell">ShoeType</td>
+                <td class="tableCell">Brand</td>
+                <td class="tableCell">ShoeModel</td>
+                <td class="tableCell">Price</td>
+                <td class="tableCell">Quantity</td>
+                <td class="tableCell">IsInSale</td>
+                <td class="tableCell">ImgLink</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var shoe in Model)
+            {
+                <tr>
+                    <td class="tableCell">@shoe.Id</td>
+                    <td class="tableCell">@shoe.ShoeType</td>
+                    <td class="tableCell">@shoe.Brand</td>
+                    <td class="tableCell">@shoe.ShoeModel</td>
+                    <td class="tableCell">@shoe.Price</td>
+                    <td class="tableCell">@shoe.Quantity</td>
+                    <td class="tableCell">@shoe.IsInSale</td>
+                    <td class="tableCell">@shoe.ImgLink</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

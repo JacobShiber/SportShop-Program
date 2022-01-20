@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "GetSales";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Shoes")'">Shoes - In Sale</h1>
+    <div id="mainButtons">
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shoes")'">Admin View</button> |
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button>
+    </div>
+</div>
+
+<hr id="headerLine" />
+<div id="cardsContainer">
+    @foreach (var shoe in Model)
+    {
+        <div class="shoeCard">
+            <img src="@shoe.ImgLink" alt=" Shoe Img" />
+            <h4>@shoe.Brand - @shoe.ShoeModel</h4>
+            <hr />
+            <p>₪@shoe.Price</p>
+        </div>
+    }
+</div>
+
