@@ -1,13 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "GetOnlyNike";
 }
 
 <div id="buttonsContainer">
     <h1 onclick="location.href='@Url.Action("Index", "Shoes")'">Shoes</h1>
     <div id="mainButtons">
         <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shoes")'">Admin View</button> |
-        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button> 
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button>
     </div>
 </div>
 
@@ -20,8 +20,8 @@
         <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyAdidas", "Shoes")'">Adidas</button><br />
         <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNB", "Shoes")'">New Balance</button><br />
         <h3>Sort</h3><br />
-        <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowMain", "Shoes")'">High-Low</button><br />
-        <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighMain", "Shoes")'">Low-High</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowNike", "Shoes")'">High-Low</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighNike", "Shoes")'">Low-High</button><br />
     </div>
     <div id="cardsContainer">
         @foreach (var shoe in Model)
@@ -35,6 +35,4 @@
         }
     </div>
 </div>
-
-
 

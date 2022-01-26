@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "GetAdminView";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Shirts")'">Shirts - Admin View</h1>
+    <div id="mainButtons">
+      |  <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shirts")'">Admin View</button> |
+    </div>
+</div>
+
+<hr id="headerLine" />
+
+<div id="tableContainer">
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <td class="tableCell">ID</td>
+                <td class="tableCell">ClothingType</td>
+                <td class="tableCell">Gender</td>
+                <td class="tableCell">Brand</td>
+                <td class="tableCell">Model</td>
+                <td class="tableCell">Price</td>
+                <td class="tableCell">Quantity</td>
+                <td class="tableCell">IsShort</td>
+                <td class="tableCell">IsDrifit</td>
+                <td class="tableCell">ImgLink</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var shirt in Model)
+            {
+            <tr>
+                <td class="tableCell">@shirt.Id</td>
+                <td class="tableCell">@shirt.ClothingType</td>
+                <td class="tableCell">@shirt.Gender</td>
+                <td class="tableCell">@shirt.Brand</td>
+                <td class="tableCell">@shirt.Model</td>
+                <td class="tableCell">@shirt.Price</td>
+                <td class="tableCell">@shirt.Quantity</td>
+                <td class="tableCell">@shirt.IsShort</td>
+                <td class="tableCell">@shirt.IsDrifit</td>
+                <td class="tableCell">@shirt.ImgLink</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

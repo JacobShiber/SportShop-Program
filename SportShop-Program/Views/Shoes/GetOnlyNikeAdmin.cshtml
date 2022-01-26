@@ -1,13 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "GetAdminView";
+    ViewBag.Title = "GetOnlyNikeAdmin";
 }
 
 <div id="buttonsContainer">
     <h1 onclick="location.href='@Url.Action("Index", "Shoes")'">Shoes - Admin View</h1>
     <div id="mainButtons">
         <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shoes")'">Admin View</button> |
-        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button> 
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button>
     </div>
 </div>
 
@@ -19,8 +19,8 @@
     <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNikeAdmin", "Shoes")'">Nike</button>
     <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyAdidasAdmin", "Shoes")'">Adidas</button>
     <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNBAdmin", "Shoes")'">New Balance</button> |
-    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowMainAdmin", "Shoes")'">High-Low</button>
-    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighMainAdmin", "Shoes")'">Low-High</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowNikeAdmin", "Shoes")'">High-Low</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighNikeAdmin", "Shoes")'">Low-High</button>
 </div>
 <div id="tableContainer">
     <table id="dataTable">

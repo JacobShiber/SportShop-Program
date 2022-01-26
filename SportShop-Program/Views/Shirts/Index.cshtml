@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Shirts")'">Shirts</h1>
+    <div id="mainButtons">
+       | <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shirts")'">Admin View</button> |
+    </div>
+</div>
+
+<hr id="headerLine" />
+<div id="shirtsContainer">
+    @foreach (var shirt in Model)
+    {
+        <div class="shirtCard">
+            <img src="@shirt.ImgLink" alt="Shirt Img" />
+            <h4>@shirt.Brand - @shirt.Model</h4>
+            <hr />
+            <p>₪@shirt.Price</p>
+        </div>
+    }
+</div>
+

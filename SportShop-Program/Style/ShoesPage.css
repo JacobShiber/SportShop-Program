@@ -37,14 +37,16 @@
 #cardsContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 850px;
+    margin-left: 25%;
 }
 
 .shoeCard {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    width: 23%;
+    width: 29%;
     height: 350px;
 }
 
@@ -53,21 +55,21 @@
     height : 60%;
 }
 
-#tableContainer{
-    margin-left: 75px;
+#tableContainer {
+    max-width: 1500px;
+    overflow: auto;
 }
 
 #dataTable {
     border-collapse: collapse;
     margin: 50px 0;
     font-size: 1em;
-    min-width: 1000px;
     text-align: center;
 }
 
 .tableCell {
-    padding: 2%;
-    width: 55px;
+    padding: 1%;
+    width: 500px;
 }
 
 #dataTable thead tr {
@@ -87,6 +89,16 @@
     #dataTable tbody tr:last-of-type {
         border-bottom: 2px solid #4e6e81;
     }
+
+
+
+.miniSideNav {
+    position:absolute;
+}
+
+.miniSideNavAdmin h3{
+    display: inline-block;
+}
 
 
 

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "GetOnlyAdidasSales";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Shoes")'">Shoes - In Sale</h1>
+    <div id="mainButtons">
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shoes")'">Admin View</button> |
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button>
+    </div>
+</div>
+
+<hr id="headerLine" />
+<div>
+    <div class="miniSideNav">
+        <h3>Present</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">All</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNikeSales", "Shoes")'">Nike</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyAdidasSales", "Shoes")'">Adidas</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNBSales", "Shoes")'">New Balance</button><br />
+        <h3>Sort</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowAdidasSales", "Shoes")'">High-Low</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighAdidasSales", "Shoes")'">Low-High</button><br />
+    </div>
+    <div id="cardsContainer">
+        @foreach (var shoe in Model)
+        {
+            <div class="shoeCard">
+                <img src="@shoe.ImgLink" alt=" Shoe Img" />
+                <h4>@shoe.Brand - @shoe.ShoeModel</h4>
+                <hr />
+                <p>₪@shoe.Price</p>
+            </div>
+        }
+    </div>
+</div>
+
+

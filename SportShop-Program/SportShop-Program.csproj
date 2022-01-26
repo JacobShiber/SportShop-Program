@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShirtsController.cs" />
     <Compile Include="Controllers\ShoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -173,7 +174,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Style\StyleSheet.css" />
+    <Content Include="Style\ShirtsPage.css" />
+    <Content Include="Style\ShoesPage.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -191,6 +193,41 @@
     <Content Include="Views\Shoes\Index.cshtml" />
     <Content Include="Views\Shoes\GetSales.cshtml" />
     <Content Include="Views\Shoes\GetAdminView.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyAdidas.cshtml" />
+    <Content Include="Views\Shirts\Index.cshtml" />
+    <Content Include="Views\Shirts\GetAdminView.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyNike.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyNB.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowMain.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowNike.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowAdidas.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowNB.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighMain.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighNike.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighAdidas.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighNB.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyNikeSales.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyAdidasSales.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyNBSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowMainSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowNikeSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowAdidasSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowNBSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighMainSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighNikeSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighAdidasSales.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighNBSales.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyNikeAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyAdidasAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetOnlyNBAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowMainAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowNikeAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowAdidasAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceHighToLowNBAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighMainAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighNikeAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighAdidasAdmin.cshtml" />
+    <Content Include="Views\Shoes\GetPriceLowToHighNBAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

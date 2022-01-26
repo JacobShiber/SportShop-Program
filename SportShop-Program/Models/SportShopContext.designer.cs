@@ -33,6 +33,12 @@ namespace SportShop_Program.Models
     partial void InsertShoe(Shoe instance);
     partial void UpdateShoe(Shoe instance);
     partial void DeleteShoe(Shoe instance);
+    partial void InsertClothing(Clothing instance);
+    partial void UpdateClothing(Clothing instance);
+    partial void DeleteClothing(Clothing instance);
+    partial void InsertTeam(Team instance);
+    partial void UpdateTeam(Team instance);
+    partial void DeleteTeam(Team instance);
     #endregion
 		
 		public SportShopContextDataContext() : 
@@ -70,6 +76,22 @@ namespace SportShop_Program.Models
 			get
 			{
 				return this.GetTable<Shoe>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Clothing> Clothings
+		{
+			get
+			{
+				return this.GetTable<Clothing>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Team> Teams
+		{
+			get
+			{
+				return this.GetTable<Team>();
 			}
 		}
 	}
@@ -183,7 +205,7 @@ namespace SportShop_Program.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShoeModel", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShoeModel", DbType="VarChar(50)")]
 		public string ShoeModel
 		{
 			get
@@ -301,6 +323,463 @@ namespace SportShop_Program.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Clothing")]
+	public partial class Clothing : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _ClothingType;
+		
+		private string _Gender;
+		
+		private string _Brand;
+		
+		private string _Model;
+		
+		private System.Nullable<int> _Price;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<bool> _IsShort;
+		
+		private System.Nullable<bool> _IsDrifit;
+		
+		private string _ImgLink;
+		
+		private System.Nullable<int> _TeamId;
+		
+		private EntityRef<Team> _Team;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnClothingTypeChanging(string value);
+    partial void OnClothingTypeChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
+    partial void OnBrandChanging(string value);
+    partial void OnBrandChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnPriceChanging(System.Nullable<int> value);
+    partial void OnPriceChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnIsShortChanging(System.Nullable<bool> value);
+    partial void OnIsShortChanged();
+    partial void OnIsDrifitChanging(System.Nullable<bool> value);
+    partial void OnIsDrifitChanged();
+    partial void OnImgLinkChanging(string value);
+    partial void OnImgLinkChanged();
+    partial void OnTeamIdChanging(System.Nullable<int> value);
+    partial void OnTeamIdChanged();
+    #endregion
+		
+		public Clothing()
+		{
+			this._Team = default(EntityRef<Team>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClothingType", DbType="VarChar(MAX)")]
+		public string ClothingType
+		{
+			get
+			{
+				return this._ClothingType;
+			}
+			set
+			{
+				if ((this._ClothingType != value))
+				{
+					this.OnClothingTypeChanging(value);
+					this.SendPropertyChanging();
+					this._ClothingType = value;
+					this.SendPropertyChanged("ClothingType");
+					this.OnClothingTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(15)")]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(50)")]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this.OnBrandChanging(value);
+					this.SendPropertyChanging();
+					this._Brand = value;
+					this.SendPropertyChanged("Brand");
+					this.OnBrandChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="VarChar(50)")]
+		public string Model
+		{
+			get
+			{
+				return this._Model;
+			}
+			set
+			{
+				if ((this._Model != value))
+				{
+					this.OnModelChanging(value);
+					this.SendPropertyChanging();
+					this._Model = value;
+					this.SendPropertyChanged("Model");
+					this.OnModelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int")]
+		public System.Nullable<int> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsShort", DbType="Bit")]
+		public System.Nullable<bool> IsShort
+		{
+			get
+			{
+				return this._IsShort;
+			}
+			set
+			{
+				if ((this._IsShort != value))
+				{
+					this.OnIsShortChanging(value);
+					this.SendPropertyChanging();
+					this._IsShort = value;
+					this.SendPropertyChanged("IsShort");
+					this.OnIsShortChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsDrifit", DbType="Bit")]
+		public System.Nullable<bool> IsDrifit
+		{
+			get
+			{
+				return this._IsDrifit;
+			}
+			set
+			{
+				if ((this._IsDrifit != value))
+				{
+					this.OnIsDrifitChanging(value);
+					this.SendPropertyChanging();
+					this._IsDrifit = value;
+					this.SendPropertyChanged("IsDrifit");
+					this.OnIsDrifitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImgLink", DbType="VarChar(MAX)")]
+		public string ImgLink
+		{
+			get
+			{
+				return this._ImgLink;
+			}
+			set
+			{
+				if ((this._ImgLink != value))
+				{
+					this.OnImgLinkChanging(value);
+					this.SendPropertyChanging();
+					this._ImgLink = value;
+					this.SendPropertyChanged("ImgLink");
+					this.OnImgLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamId", DbType="Int")]
+		public System.Nullable<int> TeamId
+		{
+			get
+			{
+				return this._TeamId;
+			}
+			set
+			{
+				if ((this._TeamId != value))
+				{
+					if (this._Team.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTeamIdChanging(value);
+					this.SendPropertyChanging();
+					this._TeamId = value;
+					this.SendPropertyChanged("TeamId");
+					this.OnTeamIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Clothing", Storage="_Team", ThisKey="TeamId", OtherKey="Id", IsForeignKey=true)]
+		public Team Team
+		{
+			get
+			{
+				return this._Team.Entity;
+			}
+			set
+			{
+				Team previousValue = this._Team.Entity;
+				if (((previousValue != value) 
+							|| (this._Team.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Team.Entity = null;
+						previousValue.Clothings.Remove(this);
+					}
+					this._Team.Entity = value;
+					if ((value != null))
+					{
+						value.Clothings.Add(this);
+						this._TeamId = value.Id;
+					}
+					else
+					{
+						this._TeamId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Team");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Teams")]
+	public partial class Team : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _TeamName;
+		
+		private EntitySet<Clothing> _Clothings;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTeamNameChanging(string value);
+    partial void OnTeamNameChanged();
+    #endregion
+		
+		public Team()
+		{
+			this._Clothings = new EntitySet<Clothing>(new Action<Clothing>(this.attach_Clothings), new Action<Clothing>(this.detach_Clothings));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamName", DbType="VarChar(MAX)")]
+		public string TeamName
+		{
+			get
+			{
+				return this._TeamName;
+			}
+			set
+			{
+				if ((this._TeamName != value))
+				{
+					this.OnTeamNameChanging(value);
+					this.SendPropertyChanging();
+					this._TeamName = value;
+					this.SendPropertyChanged("TeamName");
+					this.OnTeamNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Clothing", Storage="_Clothings", ThisKey="Id", OtherKey="TeamId")]
+		public EntitySet<Clothing> Clothings
+		{
+			get
+			{
+				return this._Clothings;
+			}
+			set
+			{
+				this._Clothings.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Clothings(Clothing entity)
+		{
+			this.SendPropertyChanging();
+			entity.Team = this;
+		}
+		
+		private void detach_Clothings(Clothing entity)
+		{
+			this.SendPropertyChanging();
+			entity.Team = null;
 		}
 	}
 }

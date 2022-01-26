@@ -1,17 +1,18 @@
 ﻿
 @{
-    ViewBag.Title = "GetSales";
+    ViewBag.Title = "GetPriceLowToHighMainSales";
 }
 
 <div id="buttonsContainer">
     <h1 onclick="location.href='@Url.Action("Index", "Shoes")'">Shoes - In Sale</h1>
     <div id="mainButtons">
         <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shoes")'">Admin View</button> |
-        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button> 
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">Sales</button>
     </div>
 </div>
 
 <hr id="headerLine" />
+
 <div class="miniSideNav">
     <h3>Present</h3><br />
     <button class="buttonItem" onclick="location.href='@Url.Action("GetSales", "Shoes")'">All</button><br />
