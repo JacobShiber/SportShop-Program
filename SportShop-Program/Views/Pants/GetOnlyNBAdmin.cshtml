@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "GetOnlyNBAdmin";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Pants")'">Pants - Admin View</h1>
+    <div id="mainButtons">
+        |  <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Pants")'">Admin View</button> |
+    </div>
+</div>
+
+<hr id="headerLine" />
+
+<div class="miniSideNavAdmin">
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Pants")'">All</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNikeAdmin", "Pants")'">Nike</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyAdidasAdmin", "Pants")'">Adidas</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNBAdmin", "Pants")'">New Balance</button> |
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowNBAdmin", "Pants")'">High-Low</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighNBAdmin", "Pants")'">Low-High</button>
+</div>
+<div id="tableContainer">
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <td class="tableCell">ID</td>
+                <td class="tableCell">ClothingType</td>
+                <td class="tableCell">Gender</td>
+                <td class="tableCell">Brand</td>
+                <td class="tableCell">Model</td>
+                <td class="tableCell">Price</td>
+                <td class="tableCell">Quantity</td>
+                <td class="tableCell">IsShort</td>
+                <td class="tableCell">IsDrifit</td>
+                <td class="tableCell">ImgLink</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pants in Model)
+            {
+                <tr>
+                    <td class="tableCell">@pants.Id</td>
+                    <td class="tableCell">@pants.ClothingType</td>
+                    <td class="tableCell">@pants.Gender</td>
+                    <td class="tableCell">@pants.Brand</td>
+                    <td class="tableCell">@pants.Model</td>
+                    <td class="tableCell">@pants.Price</td>
+                    <td class="tableCell">@pants.Quantity</td>
+                    <td class="tableCell">@pants.IsShort</td>
+                    <td class="tableCell">@pants.IsDrifit</td>
+                    <td class="tableCell">@pants.ImgLink</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

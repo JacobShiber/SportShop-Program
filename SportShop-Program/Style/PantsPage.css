@@ -1,0 +1,104 @@
+﻿body {
+}
+
+#buttonsContainer {
+    display: flex;
+    cursor: pointer;
+}
+
+    #buttonsContainer h1 {
+        flex-grow: 10;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+#mainButtons {
+    margin-top: 2.5%;
+}
+
+.buttonItem {
+    border: none;
+    background: white;
+    transition: 3s;
+}
+
+    .buttonItem:hover {
+        border-bottom: 1px solid black;
+    }
+
+#headerLine {
+    width: 25%;
+    margin-right: 75%;
+    color: black;
+}
+
+#pantsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 850px;
+    margin-left: 25%;
+}
+
+.pantsCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 29%;
+    height: 350px;
+}
+
+    .pantsCard img {
+        width: 80%;
+        height: 60%;
+    }
+
+#tableContainer {
+    max-width: 1500px;
+    overflow: auto;
+}
+
+#dataTable {
+    border-collapse: collapse;
+    margin: 50px 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+.tableCell {
+    padding: 1%;
+    width: 500px;
+}
+
+#dataTable thead tr {
+    background-color: #4e6e81;
+    color: white;
+    font-weight: bold;
+}
+
+#dataTable tbody tr {
+    border-bottom: 2px solid gray;
+}
+
+    #dataTable tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    #dataTable tbody tr:last-of-type {
+        border-bottom: 2px solid #4e6e81;
+    }
+
+
+
+.miniSideNav {
+    position: absolute;
+}
+
+.miniSideNavAdmin h3 {
+    display: inline-block;
+}
+
+.contentContainer {
+    margin-bottom: 35%;
+}

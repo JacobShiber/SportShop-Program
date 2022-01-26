@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PantsController.cs" />
     <Compile Include="Controllers\ShirtsController.cs" />
     <Compile Include="Controllers\ShoesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -174,6 +175,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Style\PantsPage.css" />
     <Content Include="Style\ShirtsPage.css" />
     <Content Include="Style\ShoesPage.css" />
     <Content Include="Web.config" />
@@ -268,6 +270,30 @@
     <Content Include="Views\Shirts\GetPriceHighToLowNBAdmin.cshtml" />
     <Content Include="Views\Shirts\GetPriceLowToHighNBAdmin.cshtml" />
     <Content Include="Views\Shirts\GetPriceLowToHighMainAdmin.cshtml" />
+    <Content Include="Views\Pants\Index.cshtml" />
+    <Content Include="Views\Pants\GetLongPants.cshtml" />
+    <Content Include="Views\Pants\GetShortPants.cshtml" />
+    <Content Include="Views\Pants\GetDrifitPants.cshtml" />
+    <Content Include="Views\Pants\GetHighToLowMain.cshtml" />
+    <Content Include="Views\Pants\GetLowToHighMain.cshtml" />
+    <Content Include="Views\Pants\GetHighToLowLongPants.cshtml" />
+    <Content Include="Views\Pants\GetLowToHighLongPants.cshtml" />
+    <Content Include="Views\Pants\GetHighToLowShortPants.cshtml" />
+    <Content Include="Views\Pants\GetLowToHighShortPants.cshtml" />
+    <Content Include="Views\Pants\GetHighToLowDrifitPants.cshtml" />
+    <Content Include="Views\Pants\GetLowToHighDrifitPants.cshtml" />
+    <Content Include="Views\Pants\GetAdminView.cshtml" />
+    <Content Include="Views\Pants\GetOnlyNikeAdmin.cshtml" />
+    <Content Include="Views\Pants\GetOnlyAdidasAdmin.cshtml" />
+    <Content Include="Views\Pants\GetOnlyNBAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceHighToLowMainAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceLowToHighMainAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceHighToLowNikeAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceLowToHighNikeAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceHighToLowAdidasAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceLowToHighAdidasAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceHighToLowNBAdmin.cshtml" />
+    <Content Include="Views\Pants\GetPriceLowToHighNBAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

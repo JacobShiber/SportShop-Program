@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "GetDrifitPants";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Pants")'">Pants - Dri-fit Pants</h1>
+    <div id="mainButtons">
+        | <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Pants")'">Admin View</button> |
+    </div>
+</div>
+
+<hr id="headerLine" />
+
+<div class="miniSideNav">
+    <h3>Present</h3><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("Index", "Pants")'">All</button><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetLongPants", "Pants")'">Long Pants</button><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetShortPants", "Pants")'">Short Pants</button><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetDrifitPants", "Pants")'">Dri-fit Pants</button><br />
+    <h3>Sort</h3><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetHighToLowDrifitPants", "Pants")'">High-Low</button><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetLowToHighDrifitPants", "Pants")'">Low-High</button><br />
+</div>
+<div id="pantsContainer">
+    @foreach (var pants in Model)
+    {
+        <div class="pantsCard">
+            <img src="@pants.ImgLink" alt="Pants Img" />
+            <h4>@pants.Brand - @pants.Model</h4>
+            <hr />
+            <p>₪@pants.Price</p>
+        </div>
+    }
+</div>
+
