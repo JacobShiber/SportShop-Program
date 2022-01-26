@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "GetLowToHighInterShirts";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Shirts")'">Shirts - Inter Shirts</h1>
+    <div id="mainButtons">
+        | <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shirts")'">Admin View</button> |
+    </div>
+</div>
+
+<hr id="headerLine" />
+<div class="teamContainer">
+    <div class="miniSideNavShirts">
+        <h3>Present</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("Index", "Shirts")'">All</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetLongShirts", "Shirts")'">Long Shirts</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetShortShirts", "Shirts")'">Short Shirts</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetDrifitShirts", "Shirts")'">Dri-fit Shirts</button><br />
+        <h3>Teams</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetPSGShirts", "Shirts")'">Paris Saint-Germain</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetLPShirts", "Shirts")'">Liverpool F.C.</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetTottenhamShirts", "Shirts")'">Tottenham Hotspurs</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetInterShirts", "Shirts")'">Inter Milan</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetChelseaShirts", "Shirts")'">Chelsea F.C.</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetRMShirts", "Shirts")'">Real Madrid</button><br />
+        <h3>Sort</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetHighToLowInterShirts", "Shirts")'">High-Low</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetLowToHighInterShirts", "Shirts")'">Low-High</button><br />
+    </div>
+    <div id="shirtsContainer">
+        @foreach (var shirt in Model)
+        {
+            <div class="shirtCard">
+                <img src="@shirt.ImgLink" alt="Shirt Img" />
+                <h4>@shirt.Brand - @shirt.Model</h4>
+                <hr />
+                <p>₪@shirt.Price</p>
+            </div>
+        }
+    </div>
+</div>
+
+

@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "GetAdminView";
+    ViewBag.Title = "GetPriceLowToHighNBAdmin";
 }
 
 <div id="buttonsContainer">
     <h1 onclick="location.href='@Url.Action("Index", "Shirts")'">Shirts - Admin View</h1>
     <div id="mainButtons">
-      |  <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shirts")'">Admin View</button> |
+        |  <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shirts")'">Admin View</button> |
     </div>
 </div>
 
@@ -17,8 +17,8 @@
     <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNikeAdmin", "Shirts")'">Nike</button>
     <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyAdidasAdmin", "Shirts")'">Adidas</button>
     <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyNBAdmin", "Shirts")'">New Balance</button> |
-    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowMainAdmin", "Shirts")'">High-Low</button>
-    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighMainAdmin", "Shirts")'">Low-High</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowNBAdmin", "Shirts")'">High-Low</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighNBAdmin", "Shirts")'">Low-High</button>
 </div>
 <div id="tableContainer">
     <table id="dataTable">
@@ -39,18 +39,18 @@
         <tbody>
             @foreach (var shirt in Model)
             {
-            <tr>
-                <td class="tableCell">@shirt.Id</td>
-                <td class="tableCell">@shirt.ClothingType</td>
-                <td class="tableCell">@shirt.Gender</td>
-                <td class="tableCell">@shirt.Brand</td>
-                <td class="tableCell">@shirt.Model</td>
-                <td class="tableCell">@shirt.Price</td>
-                <td class="tableCell">@shirt.Quantity</td>
-                <td class="tableCell">@shirt.IsShort</td>
-                <td class="tableCell">@shirt.IsDrifit</td>
-                <td class="tableCell">@shirt.ImgLink</td>
-            </tr>
+                <tr>
+                    <td class="tableCell">@shirt.Id</td>
+                    <td class="tableCell">@shirt.ClothingType</td>
+                    <td class="tableCell">@shirt.Gender</td>
+                    <td class="tableCell">@shirt.Brand</td>
+                    <td class="tableCell">@shirt.Model</td>
+                    <td class="tableCell">@shirt.Price</td>
+                    <td class="tableCell">@shirt.Quantity</td>
+                    <td class="tableCell">@shirt.IsShort</td>
+                    <td class="tableCell">@shirt.IsDrifit</td>
+                    <td class="tableCell">@shirt.ImgLink</td>
+                </tr>
             }
         </tbody>
     </table>

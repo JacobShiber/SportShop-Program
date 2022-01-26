@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "GetHighToLowLongShirts";
 }
 
 <div id="buttonsContainer">
-    <h1 onclick="location.href='@Url.Action("Index", "Shirts")'">Shirts</h1>
+    <h1 onclick="location.href='@Url.Action("Index", "Shirts")'">Shirts - Long Shirts</h1>
     <div id="mainButtons">
-       | <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shirts")'">Admin View</button> |
+        | <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Shirts")'">Admin View</button> |
     </div>
 </div>
 
@@ -26,8 +26,8 @@
     <button class="buttonItem" onclick="location.href='@Url.Action("GetChelseaShirts", "Shirts")'">Chelsea F.C.</button><br />
     <button class="buttonItem" onclick="location.href='@Url.Action("GetRMShirts", "Shirts")'">Real Madrid</button><br />
     <h3>Sort</h3><br />
-    <button class="buttonItem" onclick="location.href='@Url.Action("GetHighToLowMain", "Shirts")'">High-Low</button><br />
-    <button class="buttonItem" onclick="location.href='@Url.Action("GetLowToHighMain", "Shirts")'">Low-High</button><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetHighToLowLongShirts", "Shirts")'">High-Low</button><br />
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetLowToHighLongShirts", "Shirts")'">Low-High</button><br />
 </div>
 <div id="shirtsContainer">
     @foreach (var shirt in Model)
