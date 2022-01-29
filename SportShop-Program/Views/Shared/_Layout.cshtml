@@ -9,9 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
     <link href="~/Style/ShoesPage.css" rel="stylesheet" />
     <link href="~/Style/ShirtsPage.css" rel="stylesheet" />
     <link href="~/Style/PantsPage.css" rel="stylesheet" />
+    <link href="~/Style/GearPage.css" rel="stylesheet" />
+    <link href="~/Style/Homepage.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,6 +38,11 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="mainLogo">
+        <h1>SPORT-X-CLUB</h1>
+        <img id="tcLogo" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJzMngg7aI81JIURiwvQ4v0SQ7AkQ6pIzRqmRg%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1" />
+        <img id="indicom" src="~/Media/indicom.jpg" alt="indicom" />
     </div>
     <div class="container body-content">
         @RenderBody()

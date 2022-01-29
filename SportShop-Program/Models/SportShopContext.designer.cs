@@ -39,6 +39,9 @@ namespace SportShop_Program.Models
     partial void InsertTeam(Team instance);
     partial void UpdateTeam(Team instance);
     partial void DeleteTeam(Team instance);
+    partial void InsertGear(Gear instance);
+    partial void UpdateGear(Gear instance);
+    partial void DeleteGear(Gear instance);
     #endregion
 		
 		public SportShopContextDataContext() : 
@@ -92,6 +95,14 @@ namespace SportShop_Program.Models
 			get
 			{
 				return this.GetTable<Team>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Gear> Gears
+		{
+			get
+			{
+				return this.GetTable<Gear>();
 			}
 		}
 	}
@@ -354,8 +365,6 @@ namespace SportShop_Program.Models
 		
 		private System.Nullable<int> _TeamId;
 		
-		private EntityRef<Team> _Team;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -386,7 +395,6 @@ namespace SportShop_Program.Models
 		
 		public Clothing()
 		{
-			this._Team = default(EntityRef<Team>);
 			OnCreated();
 		}
 		
@@ -601,49 +609,11 @@ namespace SportShop_Program.Models
 			{
 				if ((this._TeamId != value))
 				{
-					if (this._Team.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnTeamIdChanging(value);
 					this.SendPropertyChanging();
 					this._TeamId = value;
 					this.SendPropertyChanged("TeamId");
 					this.OnTeamIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Clothing", Storage="_Team", ThisKey="TeamId", OtherKey="Id", IsForeignKey=true)]
-		public Team Team
-		{
-			get
-			{
-				return this._Team.Entity;
-			}
-			set
-			{
-				Team previousValue = this._Team.Entity;
-				if (((previousValue != value) 
-							|| (this._Team.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Team.Entity = null;
-						previousValue.Clothings.Remove(this);
-					}
-					this._Team.Entity = value;
-					if ((value != null))
-					{
-						value.Clothings.Add(this);
-						this._TeamId = value.Id;
-					}
-					else
-					{
-						this._TeamId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Team");
 				}
 			}
 		}
@@ -679,8 +649,6 @@ namespace SportShop_Program.Models
 		
 		private string _TeamName;
 		
-		private EntitySet<Clothing> _Clothings;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -693,7 +661,6 @@ namespace SportShop_Program.Models
 		
 		public Team()
 		{
-			this._Clothings = new EntitySet<Clothing>(new Action<Clothing>(this.attach_Clothings), new Action<Clothing>(this.detach_Clothings));
 			OnCreated();
 		}
 		
@@ -737,16 +704,233 @@ namespace SportShop_Program.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Clothing", Storage="_Clothings", ThisKey="Id", OtherKey="TeamId")]
-		public EntitySet<Clothing> Clothings
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Gear")]
+	public partial class Gear : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _SportType;
+		
+		private string _ProductName;
+		
+		private string _Brand;
+		
+		private System.Nullable<int> _Price;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<int> _TeamId;
+		
+		private string _ImgLink;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnSportTypeChanging(string value);
+    partial void OnSportTypeChanged();
+    partial void OnProductNameChanging(string value);
+    partial void OnProductNameChanged();
+    partial void OnBrandChanging(string value);
+    partial void OnBrandChanged();
+    partial void OnPriceChanging(System.Nullable<int> value);
+    partial void OnPriceChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnTeamIdChanging(System.Nullable<int> value);
+    partial void OnTeamIdChanged();
+    partial void OnImgLinkChanging(string value);
+    partial void OnImgLinkChanged();
+    #endregion
+		
+		public Gear()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
 		{
 			get
 			{
-				return this._Clothings;
+				return this._Id;
 			}
 			set
 			{
-				this._Clothings.Assign(value);
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SportType", DbType="VarChar(50)")]
+		public string SportType
+		{
+			get
+			{
+				return this._SportType;
+			}
+			set
+			{
+				if ((this._SportType != value))
+				{
+					this.OnSportTypeChanging(value);
+					this.SendPropertyChanging();
+					this._SportType = value;
+					this.SendPropertyChanged("SportType");
+					this.OnSportTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductName", DbType="VarChar(MAX)")]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this.OnProductNameChanging(value);
+					this.SendPropertyChanging();
+					this._ProductName = value;
+					this.SendPropertyChanged("ProductName");
+					this.OnProductNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Brand", DbType="VarChar(MAX)")]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this.OnBrandChanging(value);
+					this.SendPropertyChanging();
+					this._Brand = value;
+					this.SendPropertyChanged("Brand");
+					this.OnBrandChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int")]
+		public System.Nullable<int> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TeamId", DbType="Int")]
+		public System.Nullable<int> TeamId
+		{
+			get
+			{
+				return this._TeamId;
+			}
+			set
+			{
+				if ((this._TeamId != value))
+				{
+					this.OnTeamIdChanging(value);
+					this.SendPropertyChanging();
+					this._TeamId = value;
+					this.SendPropertyChanged("TeamId");
+					this.OnTeamIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImgLink", DbType="VarChar(MAX)")]
+		public string ImgLink
+		{
+			get
+			{
+				return this._ImgLink;
+			}
+			set
+			{
+				if ((this._ImgLink != value))
+				{
+					this.OnImgLinkChanging(value);
+					this.SendPropertyChanging();
+					this._ImgLink = value;
+					this.SendPropertyChanged("ImgLink");
+					this.OnImgLinkChanged();
+				}
 			}
 		}
 		
@@ -768,18 +952,6 @@ namespace SportShop_Program.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Clothings(Clothing entity)
-		{
-			this.SendPropertyChanging();
-			entity.Team = this;
-		}
-		
-		private void detach_Clothings(Clothing entity)
-		{
-			this.SendPropertyChanging();
-			entity.Team = null;
 		}
 	}
 }

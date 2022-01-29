@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "GetPriceHighToLowMainAdmin";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Gear")'">Gear - Admin View</h1>
+    <div id="mainButtons">
+        |  <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Pants")'">Admin View</button> |
+    </div>
+</div>
+
+<hr id="headerLine" />
+
+<div class="miniSideNavAdmin">
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Gear")'">All</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyBBAdmin", "Gear")'">Basketball</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetOnlyFBAdmin", "Gear")'">Football</button> |
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceHighToLowMainAdmin", "Gear")'">High-Low</button>
+    <button class="buttonItem" onclick="location.href='@Url.Action("GetPriceLowToHighMainAdmin", "Gear")'">Low-High</button>
+</div>
+<div id="tableContainer">
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <td class="tableCell">ID</td>
+                <td class="tableCell">SportType</td>
+                <td class="tableCell">ProductName</td>
+                <td class="tableCell">Brand</td>
+                <td class="tableCell">Price</td>
+                <td class="tableCell">Quantity</td>
+                <td class="tableCell">TeamId</td>
+                <td class="tableCell">ImgLink</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gear in Model)
+            {
+                <tr>
+                    <td class="tableCell">@gear.Id</td>
+                    <td class="tableCell">@gear.SportType</td>
+                    <td class="tableCell">@gear.ProductName</td>
+                    <td class="tableCell">@gear.Brand</td>
+                    <td class="tableCell">@gear.Price</td>
+                    <td class="tableCell">@gear.Quantity</td>
+                    <td class="tableCell">@gear.TeamId</td>
+                    <td class="tableCell">@gear.ImgLink</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

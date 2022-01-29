@@ -20,12 +20,11 @@
         <elementListCompartment Id="b923897e-b6ad-48f6-83f1-da87787c64dd" absoluteBounds="4.265, 5.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.78125 : 4.625); (4.78125 : 3.16750325520833); (3.5 : 3.16750325520833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/SportShopContextDataContext/Team/Team_Clothing" />
-      <nodes>
-        <classShapeMoniker Id="84a26afd-f306-4142-9737-b9c5e4831dca" />
-        <classShapeMoniker Id="a270eb63-c9eb-4ba4-9a85-9a15575dfea1" />
-      </nodes>
-    </associationConnector>
+    <classShape Id="624a7825-f951-49a6-944e-81d8bfd234ff" absoluteBounds="0.5, 3.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/SportShopContextDataContext/Gear" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bab92ff-b3d6-435c-bf13-c347c12277bf" absoluteBounds="0.51500000000000012, 4.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

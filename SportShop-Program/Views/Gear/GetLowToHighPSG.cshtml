@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "GetLowToHighPSG";
+}
+
+<div id="buttonsContainer">
+    <h1 onclick="location.href='@Url.Action("Index", "Gear")'">Gear - Paris Saint-Germain</h1>
+    <div id="mainButtons">
+        | <button class="buttonItem" onclick="location.href='@Url.Action("GetAdminView", "Gear")'">Admin View</button> |
+    </div>
+</div>
+
+<hr id="headerLine" />
+<div class="contentContainer">
+    <div class="miniSideNav">
+        <h3>Present</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("Index", "Gear")'">All</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetBBgear", "Gear")'">Basketball</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetFBgear", "Gear")'">Football</button><br />
+        <h3>Teams</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetPSGgear", "Gear")'">Paris Saint-Germain</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetRMgear", "Gear")'">Real Madrid</button><br />
+        <h3>Sort</h3><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetHighToLowPSG", "Gear")'">High-Low</button><br />
+        <button class="buttonItem" onclick="location.href='@Url.Action("GetLowToHighPSG", "Gear")'">Low-High</button><br />
+    </div>
+    <div id="gearContainer">
+        @foreach (var gear in Model)
+        {
+            <div class="gearCard">
+                <img src="@gear.ImgLink" alt="Gear Img" />
+                <h4>@gear.Brand - @gear.ProductName</h4>
+                <hr />
+                <p>₪@gear.Price</p>
+            </div>
+        }
+    </div>
+</div>
+
